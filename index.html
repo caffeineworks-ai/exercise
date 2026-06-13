@@ -1,4 +1,294 @@
-<HTML>
-  <HEAD></HEAD>
-  <BODY>깃허브 사용법 예제입니다</BODY>
-</HTML>
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DGDB-260613 | Immaculate Sound</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(26, 26, 28, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(2, 102, 255, 0.15) 0%, rgba(15, 15, 17, 0) 70%);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(2, 102, 255, 0.4);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#1f1f22",
+                      "outline": "#919095",
+                      "on-secondary-fixed-variant": "#003fa4",
+                      "on-secondary": "#002b75",
+                      "on-secondary-container": "#f9f7ff",
+                      "tertiary-container": "#0d1011",
+                      "secondary-fixed": "#dae1ff",
+                      "inverse-on-surface": "#303033",
+                      "inverse-primary": "#5f5e60",
+                      "secondary-container": "#0266ff",
+                      "secondary-fixed-dim": "#b3c5ff",
+                      "on-tertiary-container": "#7a7c7d",
+                      "surface-container-lowest": "#0e0e11",
+                      "inverse-surface": "#e4e1e5",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#131316",
+                      "on-surface-variant": "#c8c5ca",
+                      "surface-container-high": "#2a2a2d",
+                      "on-primary-container": "#7d7b7e",
+                      "primary-fixed-dim": "#c8c6c8",
+                      "error-container": "#93000a",
+                      "surface-tint": "#c8c6c8",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "surface-dim": "#131316",
+                      "on-surface": "#e4e1e5",
+                      "on-tertiary-fixed": "#191c1d",
+                      "surface-bright": "#39393c",
+                      "primary-fixed": "#e5e1e4",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "surface-container-low": "#1b1b1e",
+                      "surface-variant": "#353437",
+                      "on-tertiary": "#2e3132",
+                      "primary": "#c8c6c8",
+                      "on-primary-fixed": "#1b1b1d",
+                      "on-primary-fixed-variant": "#474649",
+                      "tertiary-fixed": "#e1e3e4",
+                      "primary-container": "#0f0f11",
+                      "secondary": "#b3c5ff",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed": "#001849",
+                      "background": "#131316",
+                      "on-background": "#e4e1e5",
+                      "surface-container-highest": "#353437",
+                      "on-primary": "#303032",
+                      "tertiary": "#c5c7c8",
+                      "outline-variant": "#47464a",
+                      "on-error": "#690005"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "section-gap": "120px",
+                      "margin-desktop": "64px",
+                      "base": "8px",
+                      "container-max": "1280px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Montserrat"],
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "headline-md": ["Montserrat"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary/30">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-white/10 h-20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="graphic_eq">graphic_eq</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface uppercase">DGDB-260613</span>
+</div>
+<button class="bg-secondary text-on-secondary-fixed font-label-md text-label-md px-6 py-2 transition-all duration-200 active:scale-95 btn-glow">
+                Buy Now
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-20 overflow-hidden px-margin-mobile">
+<div class="absolute inset-0 hero-glow z-0"></div>
+<div class="relative z-10 w-full max-w-4xl text-center space-y-8">
+<div class="inline-block px-4 py-1 glass-card text-secondary font-label-md text-label-md tracking-widest uppercase mb-4">
+                    Flagship Audio
+                </div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-white leading-tight uppercase">
+                    DGDB-260613: <br/><span class="text-secondary">IMMACULATE SOUND</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Experience the next level of sonic precision. Engineered with aerospace-grade materials for the ultimate high-fidelity portable performance.
+                </p>
+<div class="pt-8 flex flex-col gap-4 items-center">
+<button class="w-full max-w-xs bg-secondary text-on-secondary-fixed font-label-md text-label-md py-5 transition-all duration-300 btn-glow uppercase tracking-widest">
+                        Buy Now
+                    </button>
+</div>
+</div>
+<!-- Product Hero Image -->
+<div class="relative z-10 mt-16 w-full max-w-lg mx-auto">
+<div class="absolute inset-0 bg-secondary/20 blur-3xl rounded-full scale-75"></div>
+<img alt="DGDB-260613" class="relative z-20 w-full object-contain drop-shadow-2xl" data-alt="A high-end, sleek black portable Bluetooth speaker with a metallic finish and a minimal technical design. It is positioned centrally on a dark charcoal reflective surface with sharp electric blue cinematic lighting accentuating its architectural edges. The background is a moody, deep black void that emphasizes the product's premium build quality and sophisticated aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZABpKcFx-Umlh-IeH1PAAPeR_996R7a1j4IVQ1ULbOj4OhSQrRflDe-o5jRw_gwMFnojS0Ooi0bRuzeN6ufXzjE6uZLsILXv90EDbrdrSKUScY0QVgLmzDff5Q7Z5j1CMyM9Pwkioq-2SpUlE9A6GCrgY_3pe4Rt64oIZj6AAfi0noIBpJtN0gkj0v7-skS3u53vBexSbDzVLLSpzjCRWoWbrTxEXYO83Kek6hTY97r5jqpreA1zXWaFSQbq1nQoRO8oWXdY3zM0"/>
+</div>
+</section>
+<!-- Core Features Grid -->
+<section class="py-section-gap px-margin-mobile max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 1 -->
+<div class="glass-card p-8 group hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 border border-secondary/20 mb-6 group-hover:bg-secondary/20 transition-all">
+<span class="material-symbols-outlined text-secondary" data-icon="360">360</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-3 uppercase">360° Immersive Sound</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Precision-tuned omnidirectional acoustic drivers deliver consistent crystal-clear audio in every corner of the room.
+                    </p>
+</div>
+<!-- Feature 2 -->
+<div class="glass-card p-8 group hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 border border-secondary/20 mb-6 group-hover:bg-secondary/20 transition-all">
+<span class="material-symbols-outlined text-secondary" data-icon="battery_full">battery_full</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-3 uppercase">24-Hour Battery Life</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Industry-leading efficiency provides a full day of continuous playback on a single hyper-fast charge.
+                    </p>
+</div>
+<!-- Feature 3 -->
+<div class="glass-card p-8 group hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/10 border border-secondary/20 mb-6 group-hover:bg-secondary/20 transition-all">
+<span class="material-symbols-outlined text-secondary" data-icon="water_drop">water_drop</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-3 uppercase">IPX7 Waterproof</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Fully submersible protection ensures your audio experience continues even in the most demanding environments.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Visual Showcase -->
+<section class="relative w-full h-[600px] overflow-hidden">
+<div class="absolute inset-0 bg-black/40 z-10"></div>
+<img alt="Lifestyle audio" class="absolute inset-0 w-full h-full object-cover" data-alt="A luxury modern apartment interior at dusk with a minimalist aesthetic and floor-to-ceiling windows overlooking a soft city skyline. The DGDB-260613 speaker sits elegantly on a low-profile marble coffee table, with soft ambient light casting long shadows across the deep charcoal floor. The atmosphere is sophisticated and calm, highlighting the speaker as a seamless part of a high-end lifestyle setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6NqXkm_d0RnX6BB1B2RPgQ1kYUmXxaFfROTGSWiJpj171qcbUvaR03tbj1XvYP9XHA_OywJceSPZE8rNi-zErsNE4wZte_cmPOIXYzZoViKtV9RGzan_01__K7FaaN2-PmKyaPvrasvl6bRoScJdf4sMSZ9-YBVI1bStX5zvdsbrZ8JYgibgIrd8jaAe5a6i9oxd7ZOuMGDy0OXep6daXm34WO2K8-cp_ZcxJCNvAdJqmQLt1Yt9ME6h83hXUd0JvT_VCmsFJMns"/>
+<div class="relative z-20 h-full flex flex-col items-center justify-center text-center px-margin-mobile">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-white mb-6 uppercase tracking-tighter">Audio Beyond Limits</h2>
+<p class="font-body-lg text-body-lg text-white/80 max-w-2xl">
+                    Seamlessly integrated into your life, the DGDB-260613 provides the soundtrack to your most curated moments.
+                </p>
+</div>
+</section>
+<!-- Technical Specifications -->
+<section class="py-section-gap px-margin-mobile max-w-3xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-secondary uppercase tracking-widest mb-2">Technical Specifications</h2>
+<div class="h-px w-24 bg-secondary mx-auto"></div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-4 border-b border-white/5">
+<span class="font-label-md text-label-md text-outline uppercase">Connectivity</span>
+<span class="font-body-md text-body-md text-white">Bluetooth 5.3 LE</span>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-white/5">
+<span class="font-label-md text-label-md text-outline uppercase">Output Power</span>
+<span class="font-body-md text-body-md text-white">40W RMS (Peak 60W)</span>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-white/5">
+<span class="font-label-md text-label-md text-outline uppercase">Freq. Response</span>
+<span class="font-body-md text-body-md text-white">45Hz - 22,000Hz</span>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-white/5">
+<span class="font-label-md text-label-md text-outline uppercase">Battery</span>
+<span class="font-body-md text-body-md text-white">7,200mAh Lithium-Ion</span>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-white/5">
+<span class="font-label-md text-label-md text-outline uppercase">Weight</span>
+<span class="font-body-md text-body-md text-white">820g / 1.8 lbs</span>
+</div>
+<div class="flex justify-between items-center py-4 border-b border-white/5">
+<span class="font-label-md text-label-md text-outline uppercase">Dimensions</span>
+<span class="font-body-md text-body-md text-white">180 x 75 x 75 mm</span>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-surface-container-low py-section-gap px-margin-mobile relative overflow-hidden">
+<div class="absolute -right-24 top-0 w-96 h-96 bg-secondary/5 blur-[100px] rounded-full"></div>
+<div class="relative z-10 max-w-container-max mx-auto text-center space-y-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-white uppercase">Join the Audio Revolution</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
+                    The wait for perfect portable audio is over. Order your DGDB-260613 today and hear the difference.
+                </p>
+<div class="pt-4">
+<button class="bg-secondary text-on-secondary-fixed font-label-md text-label-md px-12 py-5 transition-all duration-300 btn-glow uppercase tracking-widest">
+                        Purchase Now
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center py-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="graphic_eq">graphic_eq</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface uppercase">DGDB AUDIO</span>
+</div>
+<div class="flex gap-8">
+<a class="font-body-md text-body-md text-outline hover:text-on-surface transition-colors" href="#">Products</a>
+<a class="font-body-md text-body-md text-outline hover:text-on-surface transition-colors" href="#">Technology</a>
+<a class="font-body-md text-body-md text-outline hover:text-on-surface transition-colors" href="#">Support</a>
+</div>
+<p class="font-body-md text-body-md text-outline opacity-80 uppercase tracking-tight">
+                © 2024 DGDB AUDIO. IMMACULATE CLARITY.
+            </p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for scroll reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
